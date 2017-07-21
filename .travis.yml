@@ -6,5 +6,6 @@ before_script:
   - brew install mpfr
 
 script:
+  - swift build
   - xcodebuild -scheme BigMath
   - xcodebuild -scheme BigMath test

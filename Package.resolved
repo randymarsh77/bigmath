@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CGMP",
+        "repositoryURL": "https://github.com/makecph/CGMP",
+        "state": {
+          "branch": null,
+          "revision": "481476b27a01fc0fac7e62d5ac3ba03e1601f9d4",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "CMPFR",
+        "repositoryURL": "https://github.com/randymarsh77/CMPFR",
+        "state": {
+          "branch": null,
+          "revision": "582f80b678032f680375375040cf8eabe99f2b02",
+          "version": "1.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
