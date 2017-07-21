@@ -1,0 +1,10 @@
+language: objective-c
+osx_image: xcode9
+
+before_script:
+  - brew install gmp
+  - brew install mpfr
+
+script:
+  - xcodebuild -scheme BigMath
+  - xcodebuild -scheme BigMath test

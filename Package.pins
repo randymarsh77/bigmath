@@ -6,12 +6,6 @@
       "reason": null,
       "repositoryURL": "https://github.com/makecph/CGMP",
       "version": "1.0.0"
-    },
-    {
-      "package": "CMPFR",
-      "reason": null,
-      "repositoryURL": "https://github.com/makecph/CMPFR",
-      "version": "1.0.0"
     }
   ],
   "version": 1
