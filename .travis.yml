@@ -1,9 +1,20 @@
 language: objective-c
 osx_image: xcode9
+node_js:
+  - "6"
 
 before_script:
   - brew install gmp
   - brew install mpfr
+  - npm install -g swiftx
 
 script:
   - swift build
+
+after_success:
+  - swiftx update-build-config --owner randymarsh77 --configPath builds/swift/config
+  - swiftx update-dependency-graph --owner randymarsh77 --configPath builds/swift/config
+  - swiftx trigger-downstream-builds --owner randymarsh77 --configPath builds/swift/config
+
+after_failure:
+  - swiftx trigger-downstream-builds --owner randymarsh77 --configPath builds/swift/config --force
