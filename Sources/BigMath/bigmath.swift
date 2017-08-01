@@ -16,6 +16,10 @@ public class BigMath
 	}
 }
 
-internal func ThrowNotImplemented() throws {
+internal func ThrowNotImplemented() {
+	try! DoThrowNotImplemented()
+}
+
+fileprivate func DoThrowNotImplemented() throws {
 	throw BigMathError.NotImplemented
 }

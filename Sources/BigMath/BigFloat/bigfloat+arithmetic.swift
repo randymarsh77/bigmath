@@ -36,22 +36,22 @@ extension BigFloat
 	}
 
 	public static func abs(_ x: BigFloat) -> BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return x
 	}
 
 	public prefix static func +(x: BigFloat) -> BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return x
 	}
 
 	public static func +(lhs: BigFloat, rhs: BigFloat.Stride) -> BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return lhs
 	}
 
 	public static func +(lhs: BigFloat.Stride, rhs: BigFloat) -> BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return rhs
 	}
 
@@ -72,7 +72,7 @@ extension BigFloat
 	}
 
 	public prefix static func -(operand: BigFloat) -> BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return operand
 	}
 
@@ -93,40 +93,40 @@ extension BigFloat
 	}
 
 	public mutating func formRemainder(dividingBy other: BigFloat) {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 	}
 
 	public mutating func formTruncatingRemainder(dividingBy other: BigFloat) {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 	}
 
 	public mutating func formSquareRoot() {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 	}
 
 	public mutating func addProduct(_ lhs: BigFloat, _ rhs: BigFloat) {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 	}
 
 	public var nextUp: BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return self
 	}
 
 	public var ulp: BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return BigFloat(0)
 	}
 
 	public static var ulpOfOne: BigFloat {
 		get {
-			try! ThrowNotImplemented()
+			ThrowNotImplemented()
 			return BigFloat()
 		}
 	}
 
 	public func distance(to other: BigFloat) -> BigFloat.Stride {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return 0
 	}
 

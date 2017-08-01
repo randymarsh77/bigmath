@@ -90,7 +90,7 @@ extension BigFloat
 	}
 
 	public var isCanonical: Bool {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return true
 	}
 

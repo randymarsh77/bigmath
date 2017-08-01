@@ -9,7 +9,7 @@ public struct BigFloat
 extension BigFloat : BinaryFloatingPoint
 {
 	public mutating func round(_ rule: FloatingPointRoundingRule) {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 	}
 
 	public var hashValue: Int {

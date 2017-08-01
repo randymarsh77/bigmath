@@ -4,7 +4,7 @@ import CMPFR
 extension BigFloat
 {
 	public var magnitude: BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return BigFloat(0)
 	}
 
@@ -17,27 +17,27 @@ extension BigFloat
 	}
 
 	public var significand: BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return self
 	}
 
 	public var exponentBitPattern: UInt64 {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return 0
 	}
 
 	public var significandBitPattern: UInt64 {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return 0
 	}
 
 	public var binade: BigFloat {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return self
 	}
 
 	public var significandWidth: Int {
-		try! ThrowNotImplemented()
+		ThrowNotImplemented()
 		return 0
 	}
 }
