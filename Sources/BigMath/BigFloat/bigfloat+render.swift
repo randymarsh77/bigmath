@@ -8,7 +8,7 @@ public enum RenderMode
 	case base16
 }
 
-extension BigFloat
+extension BigFloat : CustomStringConvertible
 {
 	/*
 	From MPFR docs:
@@ -40,11 +40,29 @@ extension BigFloat
 			b = 10
 			break
 		}
-		let bytes = UnsafeMutablePointer<Int8>.allocate(capacity: 1024)
+		let nullptr: UnsafeMutablePointer<Int8>? = nil
 		var exp: mpfr_exp_t = 0
 		var data = _data
-		mpfr_get_str(bytes, &exp, b, 1024, &data, MPFR_RNDN)
-		let s = String(data: Data(bytes: bytes, count: 1024), encoding: .utf8)
-		return "\(s!) x \(b)^\(exp)"
+		let str = mpfr_get_str(nullptr, &exp, b, 0, &data, MPFR_RNDN)
+		let s = String(cString:str!)
+		mpfr_free_str(str)
+		var lastSigIdx = exp
+		for (i, c) in s.enumerated() {
+			if (i >= exp && c != "0") {
+				lastSigIdx = i
+			}
+		}
+		let result = lastSigIdx == exp
+			? String(s.prefix(exp))
+			: "\(s.prefix(exp)).\(s[s.index(s.startIndex, offsetBy: exp)...].prefix(lastSigIdx - exp))"
+		return result
+	}
+
+	public func render() -> String {
+		return render(.base10)
+	}
+
+	public var description: String {
+		return render(.base10)
 	}
 }
