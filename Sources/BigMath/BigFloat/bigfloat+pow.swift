@@ -1,0 +1,11 @@
+import Foundation
+import CMPFR
+
+public func pow(_ x: BigFloat, _ e: BigFloat) -> BigFloat {
+	var data = mpfr_t()
+	mpfr_init(&data)
+	var inp = x._data
+	var exp = e._data
+	mpfr_pow(&data, &inp, &exp, MPFR_RNDN)
+	return BigFloat(data)
+}
