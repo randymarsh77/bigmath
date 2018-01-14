@@ -89,6 +89,25 @@ extension BigFloat
 		_data = data
 	}
 
+	public init(_ string: String, _ base: RenderMode) {
+		var b: Int32 = 10
+		switch base {
+		case .base2:
+			b = 2
+			break
+		case .base16:
+			b = 16
+			break
+		case .base10:
+			b = 10
+			break
+		}
+		var data = mpfr_t()
+		mpfr_init(&data)
+		mpfr_set_str(&data, string.cString(using: .utf8)!, b, MPFR_RNDN)
+		_data = data
+	}
+
 	internal init(_ data: mpfr_t) {
 		_data = data
 	}
