@@ -43,18 +43,18 @@ extension BigFloat : CustomStringConvertible
 		let nullptr: UnsafeMutablePointer<Int8>? = nil
 		var exp: mpfr_exp_t = 0
 		var data = _data
-		let str = mpfr_get_str(nullptr, &exp, b, 0, &data, MPFR_RNDN)
+		let str = mpfr_get_str(nullptr, &exp, b, data._mpfr_exp, &data, MPFR_RNDN)
 		let s = String(cString:str!)
 		mpfr_free_str(str)
-		var lastSigIdx = exp
+		var lastSigIdx = exp - 1
 		for (i, c) in s.enumerated() {
 			if (i >= exp && c != "0") {
 				lastSigIdx = i
 			}
 		}
-		let result = lastSigIdx == exp
+		let result = lastSigIdx < exp
 			? String(s.prefix(exp))
-			: "\(s.prefix(exp)).\(s[s.index(s.startIndex, offsetBy: exp)...].prefix(lastSigIdx - exp))"
+			: "\(s.prefix(exp)).\(s[s.index(s.startIndex, offsetBy: exp)...].prefix(lastSigIdx - exp + 1))"
 		return result
 	}
 
