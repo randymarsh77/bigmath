@@ -103,7 +103,7 @@ extension BigFloat
 			break
 		}
 		var data = mpfr_t()
-		mpfr_init(&data)
+		mpfr_init2(&data, string.lengthOfBytes(using: .utf8) * Int(b))
 		mpfr_set_str(&data, string.cString(using: .utf8)!, b, MPFR_RNDN)
 		_data = data
 	}
