@@ -22,7 +22,8 @@ extension BigFloat
 	public static func *(lhs: BigFloat, rhs: BigFloat) -> BigFloat {
 		var a = lhs._data
 		var b = rhs._data
-		var v = BigFloat.nan._data
+		var v = mpfr_t()
+		mpfr_init2(&v, a._mpfr_prec + b._mpfr_prec)
 		mpfr_mul(&v, &a, &b, MPFR_RNDN)
 		return BigFloat(v)
 	}
@@ -30,7 +31,8 @@ extension BigFloat
 	public static func *=(lhs: inout BigFloat, rhs: BigFloat) {
 		var a = lhs._data
 		var b = rhs._data
-		var v = BigFloat.nan._data
+		var v = mpfr_t()
+		mpfr_init2(&v, a._mpfr_prec + b._mpfr_prec)
 		mpfr_mul(&v, &a, &b, MPFR_RNDN)
 		lhs = BigFloat(v)
 	}
